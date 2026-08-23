@@ -47,7 +47,7 @@ app.MapGet("/hash/b64/{num}", (int num) =>
     string hashed = HashUtils.Base64Hash(num);
 
     return new {
-        Number = num,
+        // Number = num,
         Code = hashed
     };
 });

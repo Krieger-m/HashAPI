@@ -1,0 +1,16 @@
+using Microsoft.VisualBasic;
+using System.Security.Cryptography;
+using System.Text;
+
+namespace HashAPI.Utils;
+class HashIt
+{
+    public static string HexHash(int id)
+    {
+        var sha_hash = SHA256.Create();
+        var bytes = Encoding.UTF8.GetBytes(id.ToString());
+        var hashed_bytes = sha_hash.ComputeHash(bytes);
+        string hashed_string = Convert.ToHexString(hashed_bytes);
+        return hashed_string;
+    }
+}

@@ -10,19 +10,21 @@ app.MapGet("/hash/hex", (int num) =>
 {
     string hashed = HashUtils.HexHash(num);
 
-    return new {
+    return new
+    {
         // Number = num,
         Code = hashed
     };
 });
 
 // returns a hex-hash for a number using /hash/hex/number format
-app.MapGet("/hash/hex/{num}", (int num) =>
+app.MapGet("/hash/hex/{num}", static (int num) =>
 {
     string hashed = HashUtils.HexHash(num);
 
-    return new {
-        Number = num,
+    return new
+    {
+        // Number = num,
         Code = hashed
     };
 });

@@ -30,7 +30,7 @@ app.MapGet("/hash/hex/{num}", static (int num) =>
 });
 
 // returns a base64-hash for a number given as a param
-app.MapGet("/hash/hex", (int num) =>
+app.MapGet("/hash/b64", (int num) =>
 {
     string hashed = HashUtils.HexHash(num);
 

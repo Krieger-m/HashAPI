@@ -26,3 +26,4 @@ X:\asp.net_core\HashAPI\obj\Debug\net10.0\refint\HashAPI.dll
 X:\asp.net_core\HashAPI\obj\Debug\net10.0\HashAPI.pdb
 X:\asp.net_core\HashAPI\obj\Debug\net10.0\HashAPI.genruntimeconfig.cache
 X:\asp.net_core\HashAPI\obj\Debug\net10.0\ref\HashAPI.dll
+X:\asp.net_core\HashAPI\obj\Debug\net10.0\HashAPI.sourcelink.json

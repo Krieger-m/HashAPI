@@ -29,4 +29,27 @@ app.MapGet("/hash/hex/{num}", static (int num) =>
     };
 });
 
+// returns a base64-hash for a number given as a param
+app.MapGet("/hash/b64", (int num) =>
+{
+    string hashed = HashUtils.HexHash(num);
+
+    return new
+    {
+        // Number = num,
+        Code = hashed
+    };
+});
+
+// returns a base64-hash for a number using /hash/b64 and a number as param
+app.MapGet("/hash/b64/{num}", (int num) =>
+{
+    string hashed = HashUtils.Base64Hash(num);
+
+    return new {
+        // Number = num,
+        Code = hashed
+    };
+});
+
 app.Run();

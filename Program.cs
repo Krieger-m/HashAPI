@@ -16,4 +16,15 @@ app.MapGet("/hash/hex", (int num) =>
     };
 });
 
+// returns a hex-hash for a number using /hash/hex/number format
+app.MapGet("/hash/hex/{num}", (int num) =>
+{
+    string hashed = HashUtils.HexHash(num);
+
+    return new {
+        Number = num,
+        Code = hashed
+    };
+});
+
 app.Run();

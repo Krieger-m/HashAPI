@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HashAPI.Utils;
 
-class HashIt
+class HashUtils
 {
     public static string HexHash(int id)
     {

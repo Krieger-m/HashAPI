@@ -1,0 +1,9 @@
+# Build outputs
+/bin/
+/obj/
+
+# Build artifacts
+*.dll
+*.exe
+*.pdb
+*.cache

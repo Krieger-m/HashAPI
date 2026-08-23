@@ -29,4 +29,15 @@ app.MapGet("/hash/hex/{num}", static (int num) =>
     };
 });
 
+// returns a hex-hash for a number using /hash/b64/number format
+app.MapGet("/hash/b64/{num}", (int num) =>
+{
+    string hashed = HashUtils.Base64Hash(num);
+
+    return new {
+        Number = num,
+        Code = hashed
+    };
+});
+
 app.Run();

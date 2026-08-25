@@ -3,53 +3,50 @@ using HashAPI.Utils;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello!\nWelcome to my HashAPI-test\n\nEnter \n\t/hash/hex[number] for hex code\n\t/hash/b64/[number] for b64 code\n\nhave fun!");
+app.MapGet("/", () => "Hello!\nWelcome to my HashAPI-test\n\nEnter \n\t/hash/hex/[input] for hex code\n\t/hash/b64/[input] for b64 code\n\nhave fun!");
 
-// returns a hex-hash for a number given as a param
-app.MapGet("/hash/hex", (int num) =>
+// --- HEX HASH ROUTES ---
+app.MapGet("/hash/hex/{input}", static (string input) =>
 {
-    string hashed = HashUtils.HexHash(num);
+    string hashed = HashUtils.HexHash(input);
 
     return new
     {
-        // Number = num,
         Code = hashed
     };
 });
 
-// returns a hex-hash for a number using /hash/hex/number format
-app.MapGet("/hash/hex/{num}", static (int num) =>
+// Optional query param version: /hash/hex?input=123
+app.MapGet("/hash/hex", (string input) =>
 {
-    string hashed = HashUtils.HexHash(num);
+    string hashed = HashUtils.HexHash(input);
 
     return new
     {
-        // Number = num,
         Code = hashed
     };
 });
 
-// returns a base64-hash for a number given as a param
-app.MapGet("/hash/b64", (int num) =>
+// --- BASE64 HASH ROUTES ---
+app.MapGet("/hash/b64/{input}", (string input) =>
 {
-    string hashed = HashUtils.HexHash(num);
-
-    return new
-    {
-        // Number = num,
-        Code = hashed
-    };
-});
-
-// returns a base64-hash for a number using /hash/b64 and a number as param
-app.MapGet("/hash/b64/{num}", (int num) =>
-{
-    string hashed = HashUtils.Base64Hash(num);
+    string hashed = HashUtils.Base64Hash(input);
 
     return new {
-        // Number = num,
         Code = hashed
     };
 });
+
+// Optional query param version: /hash/b64?input=123
+app.MapGet("/hash/b64", (string input) =>
+{
+    string hashed = HashUtils.Base64Hash(input);
+
+    return new
+    {
+        Code = hashed
+    };
+});
+
 
 app.Run();

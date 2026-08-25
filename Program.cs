@@ -40,7 +40,7 @@ app.MapGet("/hash/b64/{num}", (int num) =>
 // Optional query param version: /hash/b64?num=123
 app.MapGet("/hash/b64", (int num) =>
 {
-    string hashed = HashUtils.HexHash(num);
+    string hashed = HashUtils.Base64Hash(num);
 
     return new
     {

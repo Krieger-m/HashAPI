@@ -22,7 +22,10 @@ dotnet run
   
 ## Usage
 Follow the instructions displayed in the terminal.  
-Continue the guided steps in the browser.
+Continue the guided steps in the browser to generate a sha256-hash.
   
-## latest changes
+## Latest changes
 Users are now able to input strings to generate a hash-code.
+  
+## Next up:
+more hash algorithms will be selectable via specific routes.

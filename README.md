@@ -20,6 +20,9 @@ Start the project:
 dotnet run
 ```
   
-### Usage
-Follow the instructions displayed in the terminal.
+## Usage
+Follow the instructions displayed in the terminal.  
 Continue the guided steps in the browser.
+  
+## latest changes
+Users are now able to input strings to generate a hash-code.
